@@ -5,7 +5,7 @@ This repository contains a portfolio project focused on End-to-End (E2E) test au
 ## 🎯 Project Scope
 The target site for testing is the [OrangeHRM Open Source Demo](https://opensource-demo.orangehrmlive.com/).
 Currently, the project covers critical business validations such as:
-* **Authentication:** Successful login flows and error handling for invalid access attempts.
+* **Authentication:** Successful login flows and error handling for invalid access attempts. Logout flows.
 
 ## 🛠️ Architecture and Best Practices
 * **Page Object Model (POM):** Structure designed to separate automation logic and web selectors from test assertion logic, ensuring high maintainability.
