@@ -1,6 +1,6 @@
 yaml
 
-name: Playwright Tests
+name: Execucao de Testes Playwright
 on:
   push:
     branches: [ main, master ]
