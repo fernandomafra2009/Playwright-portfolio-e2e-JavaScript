@@ -1,0 +1,37 @@
+Lista de comandos Playwright:
+
+Vídeo 2:
+npx playwright test - executa os testes dentro da pasta test
+npx playwright test --headed - executa os testes dentro da pasta test mostrando a execução nos navegadores
+npx playwright test ./tests/login.spec.js - executa apenas o login.spec.js
+
+Vídeo 3:
+test.only - executa apenas aquele teste
+test.skip - não executa aquele teste
+
+Vídeo 4:
+await page.getByAltText("profile picture").first.click() - nesse caso há 2 elementos "profile picture" na página, então é necessário informar que é para clicar no primeiro (first).
+
+Vídeo 6:
+Não há método nativo do Playwright para maximizar a tela!
+console.log(await page.viewportSize().width) - captura largura da página
+consoe.log(await page.viewportSize().height) - captura altura da página
+Site https://whatismyviewport.com/ retorna o Screen Size (width, height)
+Informar dentro do navegador (playwright.config.js) viewport: {width: 1920, height: 1080}
+
+Vídeo 7:
+Para gravar fotos e vídeos inserir no playwright.config.js (dentro do browser):
+screenshot:"on",
+video:"on",
+trace:"on"
+
+Vídeo 8:
+Gravar e executar scrpits através do navegador:
+Comando - npx playwright codegen
+
+Ex: npx playwright codegen https://opensource-demo.orangehrmlive.com/web/index.php/auth/login -o ./tests/codegen.spec.js - abre o link e salva o código em codegen.spec.js
+
+Vídeo 9:
+Executar novamente testes que tenham falhado
+1 - Inserir "retries:2," no config.js (deixando comentado o retries que já existe)
+2 - Inserir "--retries='numero de vezes'" no fim do comando de execução, ex: npx playwright test ./tests/Login.spec.js --headed --retries=3
