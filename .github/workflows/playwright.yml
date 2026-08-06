@@ -1,5 +1,4 @@
 yaml
-
 name: Execucao de Testes Playwright
 on:
   push:
