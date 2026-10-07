@@ -1,16 +1,15 @@
-# 🎭 E2E Test Automation with Playwright & JavaScript
+# 🎭 API and E2E Test Automation with Playwright & JavaScript
 
-This repository contains a portfolio project focused on End-to-End (E2E) test automation for the **OrangeHRM** platform. The goal is to apply test automation architecture best practices relevant to the QA market.
+This repository contains API automation tests for **ServeRest** and End-to-End (E2E) tests for the **OrangeHRM** platform.
 
 ## 🎯 Project Scope
-The target site for testing is the [OrangeHRM Open Source Demo](https://opensource-demo.orangehrmlive.com/).
-Currently, the project covers critical business validations such as:
-* **Authentication:** Successful login flows and error handling for invalid access attempts. Logout flows.
+- **ServeRest API:** user creation, valid-user authentication, and product listing.
+- **OrangeHRM E2E:** successful and invalid login flows, including logout.
 
 ## 🛠️ Architecture and Best Practices
-* **Page Object Model (POM):** Structure designed to separate automation logic and web selectors from test assertion logic, ensuring high maintainability.
-* **Multi-Browser Support:** Configured to run on Chromium, Firefox, and WebKit (Safari).
-* **CI/CD with GitHub Actions:** Integrated pipeline that automatically executes the test suite on every commit or pull request.
+* **API testing:** Playwright's `request` fixture sends HTTP requests directly to ServeRest without launching a browser.
+* **Browser testing:** The current Playwright project is configured to run on Chromium.
+* **CI/CD with GitHub Actions:** The workflow runs the test suite on pushes and pull requests to `main`.
 
 ## 📦 How to Run Locally
 
@@ -24,7 +23,11 @@ npx playwright install
 ```
 3. Run all tests:
 ```bash
-npx playwright test
+npm test
+```
+To run only the ServeRest API scenarios:
+```bash
+npm run test:api
 ```
 4. View the interactive HTML report:
 ```bash
