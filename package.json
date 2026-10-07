@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "playwright test",
-    "test:api": "playwright test tests/api.spec.js"
+    "test:api": "playwright test tests/api.spec.js",
+    "test:ui": "playwright test --ui",
+    "test:api:ui": "playwright test tests/api.spec.js --ui",
+    "report": "playwright show-report"
   },
   "keywords": [],
   "author": "",
